@@ -1,11 +1,33 @@
 public class Work1 {
 
     public static void main(String[] args) {
-        FizzBuzz(500);
+
+        System.out.println("1. Функции: \n");
+
+        /*FizzBuzz(500); */
         System.out.println(MakeInstall("make install"));
         System.out.println(QuadraticRoots(1, -3, 2));
         System.out.println(Sum(0.0, 2));
         System.out.println(Palindrome("level"));
+        
+        System.out.println("\n2. ООП: \n");
+
+        /* ООП, кнопка */
+        Button button = new Button();
+        button.click();
+        button.click();
+
+        /* Баланс */
+        Balance balance = new Balance();
+        balance.addLeft(5);
+        balance.addRight(3);
+        balance.result();
+
+        /* Колокольчик */
+        Bell bell = new Bell();
+        bell.sound();
+        bell.sound();
+        bell.sound();
     }
 
 
@@ -68,6 +90,58 @@ public class Work1 {
         }
         return(isPalindrome ? str + " - палиндром" : str + " - не палиндром");
     }
+
+    
+
+    /* ООП: Кнопка с подсчетом нажатий */
+    public static class Button {
+    private int clicks = 0;
+
+    public void click() {
+        clicks++;
+        System.out.println("Количество нажатий: " + clicks);
+    }
+}
+
+    /* ООП: Баланс */
+    public static class Balance {
+    private int left = 0;
+    private int right = 0;
+
+    public void addLeft(int weight) {
+        left += weight;
+    }
+
+    public void addRight(int weight) {
+        right += weight;
+    }
+
+    public void result() {
+        if (left == right) {
+            System.out.println("Баланс уравнен");
+        } else if (right > left) {
+            System.out.println("Баланс уходит в сторону: R");
+        } else {
+            System.out.println("Баланс уходит в сторону: L");
+        }
+    }
+
+    /* ООП: Колокольчик */
+
+
+}
+    public static class Bell {
+    private boolean dingNext = true;
+
+    public void sound() {
+        if (dingNext) {
+            System.out.println("ding");
+        } else {
+            System.out.println("dong");
+        }
+        dingNext = !dingNext;
+    }
+}
 
 }
 
