@@ -4,7 +4,8 @@ public class Work1 {
         FizzBuzz(500);
         System.out.println(MakeInstall("make install"));
         System.out.println(QuadraticRoots(1, -3, 2));
-        System.out.printf(Sum(0.0, 2));
+        System.out.println(Sum(0.0, 2));
+        System.out.println(Palindrome("level"));
     }
 
 
@@ -56,7 +57,17 @@ public class Work1 {
         return("Сумма ряда: " + sum);
     }
 
-
+    /* Палиндром */
+    public static String Palindrome(String str) {
+        boolean isPalindrome = true;
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        return(isPalindrome ? str + " - палиндром" : str + " - не палиндром");
+    }
 
 }
 
