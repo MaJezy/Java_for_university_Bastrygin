@@ -1,4 +1,7 @@
-public class Work1 {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Work {
 
     public static void main(String[] args) {
 
@@ -12,7 +15,7 @@ public class Work1 {
         
         System.out.println("\n2. ООП: \n");
 
-        /* ООП, кнопка */
+        /* Кнопка с подсчетом нажатий */
         Button button = new Button();
         button.click();
         button.click();
@@ -28,6 +31,15 @@ public class Work1 {
         bell.sound();
         bell.sound();
         bell.sound();
+
+        /* OddEvenSeparator */
+        OddEvenSeparator OES = new OddEvenSeparator();
+        OES.addNumber(2);
+        OES.addNumber(5);
+        OES.addNumber(7);
+        OES.addNumber(6);
+        System.out.println(OES.even());
+        System.out.println(OES.odd());
     }
 
 
@@ -93,17 +105,17 @@ public class Work1 {
 
     
 
-    /* ООП: Кнопка с подсчетом нажатий */
+    /* Кнопка с подсчетом нажатий */
     public static class Button {
     private int clicks = 0;
 
     public void click() {
         clicks++;
-        System.out.println("Количество нажатий: " + clicks);
+        System.out.println("Количество нажатий кнопки: " + clicks);
     }
 }
 
-    /* ООП: Баланс */
+    /* Баланс */
     public static class Balance {
     private int left = 0;
     private int right = 0;
@@ -118,18 +130,16 @@ public class Work1 {
 
     public void result() {
         if (left == right) {
-            System.out.println("Баланс уравнен");
+            System.out.println("\nБаланс уравнен\n");
         } else if (right > left) {
-            System.out.println("Баланс уходит в сторону: R");
+            System.out.println("\nБаланс уходит в сторону: R\n");
         } else {
-            System.out.println("Баланс уходит в сторону: L");
+            System.out.println("\nБаланс уходит в сторону: L\n");
         }
     }
 
-    /* ООП: Колокольчик */
-
-
-}
+    
+}   /* Колокольчик */
     public static class Bell {
     private boolean dingNext = true;
 
@@ -141,8 +151,31 @@ public class Work1 {
         }
         dingNext = !dingNext;
     }
+
+
+}   /* OddEvenSeparator */
+    public static class OddEvenSeparator {
+    private List<Integer> evens = new ArrayList<>();
+    private List<Integer> odds = new ArrayList<>();
+
+    public void addNumber(int number) {
+        if (number % 2 == 0) {
+            evens.add(number);
+        } else {
+            odds.add(number);
+        }
+    }
+
+    public String even() {
+        return("Чётные: " + evens);
+    }
+
+    public String odd() {
+        return("Нечётные: " + odds);
+    }
 }
 
+    
 }
 
 
