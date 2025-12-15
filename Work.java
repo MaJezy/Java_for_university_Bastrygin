@@ -16,23 +16,27 @@ public class Work {
         System.out.println("\n2. ООП: \n");
 
         /* Кнопка с подсчетом нажатий */
+        System.out.println("2.1:");
         Button button = new Button();
         button.click();
         button.click();
 
         /* Баланс */
+        System.out.println("\n2.2:");
         Balance balance = new Balance();
         balance.addLeft(5);
         balance.addRight(3);
         balance.result();
 
         /* Колокольчик */
+        System.out.println("2.3:");
         Bell bell = new Bell();
         bell.sound();
         bell.sound();
         bell.sound();
 
         /* OddEvenSeparator */
+        System.out.println("\n2.4:");
         OddEvenSeparator OES = new OddEvenSeparator();
         OES.addNumber(2);
         OES.addNumber(5);
@@ -40,6 +44,24 @@ public class Work {
         OES.addNumber(6);
         System.out.println(OES.even());
         System.out.println(OES.odd());
+
+        System.out.println("\n");
+
+        /* Table */
+        System.out.println("2.5:");
+        Table table = new Table(3, 3); // 3x3 таблица
+        table.setValue(0, 0, 5);
+        table.setValue(0, 1, 7);
+        table.setValue(1, 1, 12);
+        table.setValue(2, 2, 18);
+
+        System.out.println("Таблица:");
+        System.out.println(table.toString());
+
+        System.out.println("Среднее значение: " + table.average());
+        System.out.println("Строк: " + table.rows() + ", Столбцов: " + table.cols());
+
+
     }
 
 
@@ -174,6 +196,65 @@ public class Work {
         return("Нечётные: " + odds);
     }
 }
+
+    /* Table */
+    public static class Table {
+    private int[][] data;
+
+    public Table(int rows, int cols) {
+        data = new int[rows][cols];
+    }
+
+    public int getValue(int row, int col) {
+        return data[row][col];
+    }
+
+    public void setValue(int row, int col, int value) {
+        data[row][col] = value;
+    }
+
+    public int rows() {
+        return data.length;
+    }
+
+    public int cols() {
+        return data[0].length;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int[] row : data) {
+            for (int val : row) {
+                sb.append(val).append(" ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public double average() {
+        double sum = 0;
+        int count = 0;
+        for (int[] row : data) {
+            for (int val : row) {
+                sum += val;
+                count++;
+            }
+        }
+        return sum / count;
+    }
+}
+
+
+
+
+
+    /* Коллекции */
+
+    /* 1. Статические методы класса Collections */
+    
+
 
     
 }
