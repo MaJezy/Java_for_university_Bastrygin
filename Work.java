@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import collections.*; ;
+
+
+
+
 public class Work {
 
     public static void main(String[] args) {
@@ -62,6 +67,20 @@ public class Work {
         System.out.println("Строк: " + table.rows() + ", Столбцов: " + table.cols());
 
 
+        /* Коллекции */
+                // Задание 1: Collections
+        System.out.println("\nКоллекции:\n");
+        CollectionsDemo.run();
+
+        // Задание 2: PrimesGenerator
+        
+
+        // Задание 3: Класс Human и компараторы
+        System.out.println("\n" + "═");
+        System.out.println("ЗАДАНИЕ 9: HUMAN И КОЛЛЕКЦИИ");
+        System.out.println("═");
+
+        HumanCollectionsDemo.demo();
     }
 
 
@@ -248,16 +267,8 @@ public class Work {
 
 
 
+    }
 
-
-    /* Коллекции */
-
-    /* 1. Статические методы класса Collections */
-    
-
-
-    
-}
 
 
 
