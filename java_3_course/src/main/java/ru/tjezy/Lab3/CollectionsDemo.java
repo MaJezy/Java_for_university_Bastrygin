@@ -1,4 +1,4 @@
-package ru.tjezy;
+package ru.tjezy.Lab3;
 
 
 import java.util.*;
