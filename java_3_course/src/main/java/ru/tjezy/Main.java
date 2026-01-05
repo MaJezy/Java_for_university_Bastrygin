@@ -9,81 +9,112 @@ import ru.tjezy.Lab3.*;
 
 
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("1. Функции: \n");
+        Scanner sc = new Scanner(System.in);
 
-        /*FizzBuzz(500); */
-        System.out.println(MakeInstall("make install"));
-        System.out.println(QuadraticRoots(1, -3, 2));
-        System.out.println(Sum(0.0, 2));
-        System.out.println(Palindrome("level"));
-        
-        System.out.println("\n2. ООП: \n");
+        System.out.println("Выберите тему:");
+        System.out.println("1: Функции");
+        System.out.println("2: ООП");
+        System.out.println("3: Коллекции");
+        System.out.println("4: ");
+        System.out.print("Ваш выбор: ");
 
-        /* ООП */
-        /* Кнопка с подсчетом нажатий */
-        System.out.println("2.1:");
-        Button button = new Button();
-        button.click();
-        button.click();
+        int topic = sc.nextInt();
+        System.out.println();
 
-        /* Баланс */
-        System.out.println("\n2.2:");
-        Balance balance = new Balance();
-        balance.addLeft(5);
-        balance.addRight(3);
-        balance.result();
+        switch (topic) {
 
-        /* Колокольчик */
-        System.out.println("2.3:");
-        Bell bell = new Bell();
-        bell.sound();
-        bell.sound();
-        bell.sound();
+            /* ===================== 1. ФУНКЦИИ ===================== */
+            case 1:
+                System.out.println("1. Функции: \n");
 
-        /* OddEvenSeparator */
-        System.out.println("\n2.4:");
-        OddEvenSeparator OES = new OddEvenSeparator();
-        OES.addNumber(2);
-        OES.addNumber(5);
-        OES.addNumber(7);
-        OES.addNumber(6);
-        System.out.println(OES.even());
-        System.out.println(OES.odd());
+                /*FizzBuzz(500); */
+                System.out.println(MakeInstall("make install"));
+                System.out.println(QuadraticRoots(1, -3, 2));
+                System.out.println(Sum(0.0, 2));
+                System.out.println(Palindrome("level"));
+                break;
 
-        System.out.println("\n");
+            /* ===================== 2. ООП ===================== */
+            case 2:
+                System.out.println("\n2. ООП: \n");
 
-        /* Table */
-        System.out.println("2.5:");
-        Table table = new Table(3, 3); // 3x3 таблица
-        table.setValue(0, 0, 5);
-        table.setValue(0, 1, 7);
-        table.setValue(1, 1, 12);
-        table.setValue(2, 2, 18);
+                /* Кнопка с подсчетом нажатий */
+                System.out.println("2.1:");
+                Button button = new Button();
+                button.click();
+                button.click();
 
-        System.out.println("Таблица:");
-        System.out.println(table.toString());
+                /* Баланс */
+                System.out.println("\n2.2:");
+                Balance balance = new Balance();
+                balance.addLeft(5);
+                balance.addRight(3);
+                balance.result();
 
-        System.out.println("Среднее значение: " + table.average());
-        System.out.println("Строк: " + table.rows() + ", Столбцов: " + table.cols());
+                /* Колокольчик */
+                System.out.println("2.3:");
+                Bell bell = new Bell();
+                bell.sound();
+                bell.sound();
+                bell.sound();
 
+                /* OddEvenSeparator */
+                System.out.println("\n2.4:");
+                OddEvenSeparator OES = new OddEvenSeparator();
+                OES.addNumber(2);
+                OES.addNumber(5);
+                OES.addNumber(7);
+                OES.addNumber(6);
+                System.out.println(OES.even());
+                System.out.println(OES.odd());
 
-        /* Коллекции */
+                System.out.println("\n");
+
+                /* Table */
+                System.out.println("2.5:");
+                Table table = new Table(3, 3); // 3x3 таблица
+                table.setValue(0, 0, 5);
+                table.setValue(0, 1, 7);
+                table.setValue(1, 1, 12);
+                table.setValue(2, 2, 18);
+
+                System.out.println("Таблица:");
+                System.out.println(table.toString());
+
+                System.out.println("Среднее значение: " + table.average());
+                System.out.println("Строк: " + table.rows() + ", Столбцов: " + table.cols());
+                break;
+
+            /* ===================== 3. КОЛЛЕКЦИИ ===================== */
+            case 3:
+                System.out.println("\nКоллекции:\n");
+
                 // Задание 1: Collections
-        System.out.println("\nКоллекции:\n");
-        CollectionsDemo.run();
+                CollectionsDemo.run();
 
-        // Задание 2: PrimesGenerator
-        
+                // Задание 3: Класс Human и компараторы
+                System.out.println("\n" + "═");
+                System.out.println("HUMAN И КОЛЛЕКЦИИ");
 
-        // Задание 3: Класс Human и компараторы
-        System.out.println("\n" + "═");
-        System.out.println("HUMAN И КОЛЛЕКЦИИ");
+                HumanCollectionsDemo.demo();
+                break;
 
-        HumanCollectionsDemo.demo();
+
+            case 4:
+                System.out.println("Тут будет лаба4");
+                break;
+
+
+            default:
+                System.out.println("Неверный пункт меню");
+        }
+
+        sc.close();
     }
 }
-
