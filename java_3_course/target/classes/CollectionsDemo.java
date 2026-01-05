@@ -1,4 +1,5 @@
-package collections;
+package ru.tjezy.main.resources;
+
 import java.util.*;
 
 public  class CollectionsDemo {

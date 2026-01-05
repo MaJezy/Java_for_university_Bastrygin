@@ -1,4 +1,5 @@
-package collections;
+package ru.tjezy;
+
 
 import java.util.*;
 

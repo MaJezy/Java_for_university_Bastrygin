@@ -1,4 +1,4 @@
-package collections;
+package ru.tjezy.main.resources;
 
 public class Human implements Comparable<Human> {
     private String firstName;
