@@ -7,6 +7,7 @@ import static ru.tjezy.Lab2.Lab2.*;
 
 import ru.tjezy.Lab3.*;
 
+import ru.tjezy.Lab4.*;
 
 
 import java.util.Scanner;
@@ -107,7 +108,8 @@ public class Main {
 
 
             case 4:
-                System.out.println("Тут будет лаба4");
+                System.out.println("StreamAPI");
+                JsonStreamDemo.demo();
                 break;
 
 
